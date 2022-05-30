@@ -128,7 +128,7 @@ define([
                 var renderer = new SimpleRenderer(marker);
                 csv.setRenderer(renderer);
                 
-                var template = new InfoTemplate("Camera", "<a target='_blank' href='${video_url}'> Show me! </a>");
+                var template = new InfoTemplate("Camera", "<video width='320' height='240' controls autoplay>  <source src='${video_url}' type='video/mp4'></video>");
                 csv.setInfoTemplate(template);
 
                 this.map.addLayer(csv);
