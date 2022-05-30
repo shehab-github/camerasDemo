@@ -120,24 +120,22 @@ define([
 
             addCSVcamersLayer: function () {
 
-                addCSVcamersLayer: function () {
+                csv = new CSVLayer("./sample-data/2.5_week.csv", {
+                    copyright: "USGS.gov"
+                });
+                var orangeRed = new Color([238, 69, 0]); // hex is #ff4500
+                var marker = new SimpleMarkerSymbol("solid", 15, null, orangeRed);
+                var renderer = new SimpleRenderer(marker);
+                csv.setRenderer(renderer);
 
-                    csv = new CSVLayer("./sample-data/2.5_week.csv", {
-                        copyright: "USGS.gov"
-                    });
-                    var orangeRed = new Color([238, 69, 0]); // hex is #ff4500
-                    var marker = new SimpleMarkerSymbol("solid", 15, null, orangeRed);
-                    var renderer = new SimpleRenderer(marker);
-                    csv.setRenderer(renderer);
-                    
-                let content=   '<iframe src="https://www.youtube.com/embed/vHiqQbhVOTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-                    var template = new InfoTemplate("Camera", content);
-                    //var template = new InfoTemplate("Camera", "<video controls autoplay>  <source src='${video_url}' type='video/mp4'></video>");
-                    csv.setInfoTemplate(template);
-    
-                    this.map.addLayer(csv);
-                }
+                let content = '<iframe src="https://www.youtube.com/embed/vHiqQbhVOTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                var template = new InfoTemplate("Camera", content);
+                //var template = new InfoTemplate("Camera", "<video controls autoplay>  <source src='${video_url}' type='video/mp4'></video>");
+                csv.setInfoTemplate(template);
+
+                this.map.addLayer(csv);
             }
+
         });
         return clazz;
     });
