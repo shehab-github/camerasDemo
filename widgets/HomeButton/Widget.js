@@ -128,7 +128,7 @@ define([
                 var renderer = new SimpleRenderer(marker);
                 csv.setRenderer(renderer);
 
-                let content = '<iframe src="https://www.youtube.com/embed/vHiqQbhVOTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                let content = '<iframe src="https://www.youtube.com/embed/vHiqQbhVOTc?autoplay=1,controls=0"></iframe>';
                 var template = new InfoTemplate("Camera", content);
                 //var template = new InfoTemplate("Camera", "<video controls autoplay>  <source src='${video_url}' type='video/mp4'></video>");
                 csv.setInfoTemplate(template);
